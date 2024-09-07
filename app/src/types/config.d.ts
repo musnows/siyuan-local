@@ -1486,10 +1486,6 @@ declare namespace Config {
          */
         osPlatform: string;
         /**
-         * Whether to upload error logs
-         */
-        uploadErrLog: boolean;
-        /**
          * The absolute path of the workspace directory
          */
         workspaceDir: string;
