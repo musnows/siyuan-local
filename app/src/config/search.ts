@@ -94,10 +94,10 @@ export const initConfigSearch = (element: HTMLElement, app: App) => {
         // 关于
         getLang(["autoLaunch", "autoLaunchTip", "about", "about1", "about2", "about3", "about4", "about5", "about6",
             "about7", "about8", "about11", "about12", "about13", "about14", "about17", "config",
-            "dataRepoKey", "dataRepoKeyTip1", "dataRepoKeyTip2", "slogan", "currentVer", "checkUpdate", "updatePath",
+            "dataRepoKey", "dataRepoKeyTip1", "dataRepoKeyTip2", "slogan", "updatePath",
             "systemLog", "importKey", "genKey", "genKeyByPW", "copyKey", "resetRepo", "systemLogTip", "export",
             "downloadLatestVer", "safeQuit", "directConnection", "siyuanNote", "key", "password", "copied", "resetRepoTip",
-            "autoDownloadUpdatePkg", "autoDownloadUpdatePkgTip", "networkProxy", "keyPlaceholder", "initRepoKeyTip"]),
+            "networkProxy", "keyPlaceholder", "initRepoKeyTip"]),
     ];
     const inputElement = element.querySelector(".b3-form__icon input") as HTMLInputElement;
     /// #if !BROWSER
