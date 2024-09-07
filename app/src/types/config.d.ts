@@ -1433,10 +1433,6 @@ declare namespace Config {
          */
         dataDir: string;
         /**
-         * Whether to disable Google Analytics
-         */
-        disableGoogleAnalytics: boolean;
-        /**
          * Whether to automatically download the installation package for the new version
          */
         downloadInstallPkg: boolean;
