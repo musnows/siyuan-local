@@ -409,19 +409,19 @@ func setAutoLaunch(c *gin.Context) {
 	model.Conf.Save()
 }
 
-func setDownloadInstallPkg(c *gin.Context) {
-	ret := gulu.Ret.NewResult()
-	defer c.JSON(http.StatusOK, ret)
-
-	arg, ok := util.JsonArg(c, ret)
-	if !ok {
-		return
-	}
-
-	downloadInstallPkg := arg["downloadInstallPkg"].(bool)
-	model.Conf.System.DownloadInstallPkg = downloadInstallPkg
-	model.Conf.Save()
-}
+// func setDownloadInstallPkg(c *gin.Context) {
+// 	ret := gulu.Ret.NewResult()
+// 	defer c.JSON(http.StatusOK, ret)
+//
+// 	arg, ok := util.JsonArg(c, ret)
+// 	if !ok {
+// 		return
+// 	}
+//
+// 	downloadInstallPkg := arg["downloadInstallPkg"].(bool)
+// 	model.Conf.System.DownloadInstallPkg = downloadInstallPkg
+// 	model.Conf.Save()
+// }
 
 func setNetworkProxy(c *gin.Context) {
 	ret := gulu.Ret.NewResult()
@@ -467,11 +467,14 @@ func exit(c *gin.Context) {
 		force = forceArg.(bool)
 	}
 
-	execInstallPkgArg := arg["execInstallPkg"] // 0：默认检查新版本，1：不执行新版本安装，2：执行新版本安装
-	execInstallPkg := 0
-	if nil != execInstallPkgArg {
-		execInstallPkg = int(execInstallPkgArg.(float64))
-	}
+	// execInstallPkgArg := arg["execInstallPkg"] // 0：默认检查新版本，1：不执行新版本安装，2：执行新版本安装
+	// execInstallPkg := 0
+	// if nil != execInstallPkgArg {
+	// 	execInstallPkg = int(execInstallPkgArg.(float64))
+	// }
+
+	// 魔改：始终为1，跳过新版本安装
+	execInstallPkg := 1
 
 	exitCode := model.Close(force, true, execInstallPkg)
 	ret.Code = exitCode

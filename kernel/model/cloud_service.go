@@ -218,7 +218,7 @@ func RefreshCheckJob() {
 	go refreshSubscriptionExpirationRemind()
 	go refreshUser()
 	go refreshAnnouncement()
-	go refreshCheckDownloadInstallPkg()
+	// go refreshCheckDownloadInstallPkg() // 不检查新版本
 }
 
 func refreshSubscriptionExpirationRemind() {
@@ -270,15 +270,16 @@ func refreshUser() {
 	}
 }
 
-func refreshCheckDownloadInstallPkg() {
-	defer logging.Recover()
+// 不检查新版本更新
+// func refreshCheckDownloadInstallPkg() {
+// 	defer logging.Recover()
 
-	time.Sleep(3 * time.Minute)
-	checkDownloadInstallPkg()
-	if "" != getNewVerInstallPkgPath() {
-		util.PushMsg(Conf.Language(62), 15*1000)
-	}
-}
+// 	time.Sleep(3 * time.Minute)
+// 	checkDownloadInstallPkg()
+// 	if "" != getNewVerInstallPkgPath() {
+// 		util.PushMsg(Conf.Language(62), 15*1000)
+// 	}
+// }
 
 func refreshAnnouncement() {
 	defer logging.Recover()

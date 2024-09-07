@@ -222,9 +222,10 @@ func Mount(boxID string) (alreadyMount bool, err error) {
 			time.Sleep(time.Second * 3)
 			util.PushErrMsg(Conf.Language(52), 7000)
 
-			// 每次打开帮助文档时自动检查版本更新并提醒 https://github.com/siyuan-note/siyuan/issues/5057
-			time.Sleep(time.Second * 10)
-			CheckUpdate(true)
+			// // 每次打开帮助文档时自动检查版本更新并提醒 https://github.com/siyuan-note/siyuan/issues/5057
+			// time.Sleep(time.Second * 10)
+			// CheckUpdate(true)
+			// 魔改：不检查更新，注释此处操作
 		}()
 	}
 
